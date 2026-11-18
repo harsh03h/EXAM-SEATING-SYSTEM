@@ -112,9 +112,11 @@ exam-seating-system/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/exam-seating-system.git
-cd exam-seating-system
+git clone https://github.com/harsh03h/EXAM-SEATING-SYSTEM.git
+cd EXAM-SEATING-SYSTEM
 ```
+
+> **Windows Quick Start:** You can simply double-click `start_all.bat` to launch both the backend and frontend servers together and open the web app automatically.
 
 ### 2. Backend Setup
 

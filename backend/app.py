@@ -88,7 +88,7 @@ CORS(app, origins=["http://localhost:5173"], supports_credentials=True)
 # Config
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///exam_seating.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-app.config["JWT_SECRET_KEY"] = "exam-seating-super-secret-2024"
+app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET_KEY", "exam-seating-super-secret-2024-secure-jwt-key")
 app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=8)
 
 db = SQLAlchemy(app)

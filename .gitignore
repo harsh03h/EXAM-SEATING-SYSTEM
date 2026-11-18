@@ -1,0 +1,22 @@
+# Environment variables
+.env
+backend/.env
+
+# Python cache & databases
+__pycache__/
+*.py[cod]
+*$py.class
+backend/instance/
+*.db
+*.sqlite3
+
+# Frontend build & cache
+frontend/dist/
+frontend/node_modules/.vite/
+.eslintcache
+
+# OS & IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

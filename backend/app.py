@@ -83,7 +83,12 @@ Rules:
         return empty, f"AI error: {str(e)}"
 
 app = Flask(__name__)
-CORS(app, origins=["http://localhost:5173"], supports_credentials=True)
+# Enable CORS for local dev and deployed frontend
+CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True)
+
+@app.route("/", methods=["GET"])
+def health():
+    return jsonify({"status": "ok", "message": "ExamSeat Backend API is running"}), 200
 
 # Config
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///exam_seating.db"
@@ -434,7 +439,8 @@ def init_db():
             db.session.commit()
             print("✅ Default superadmin created: superadmin / Admin@1234")
 
+# Automatically initialize database tables and superadmin on startup
+init_db()
 
 if __name__ == "__main__":
-    init_db()
     app.run(debug=True, port=5000)

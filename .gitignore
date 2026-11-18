@@ -1,9 +1,19 @@
+# Dependencies (MUST NEVER BE COMMITTED)
+node_modules/
+*/node_modules/
+frontend/node_modules/
+venv/
+*/venv/
+backend/venv/
+
 # Environment variables
 .env
+*.env
 backend/.env
 
 # Python cache & databases
 __pycache__/
+*/__pycache__/
 *.py[cod]
 *$py.class
 backend/instance/
@@ -12,7 +22,9 @@ backend/instance/
 
 # Frontend build & cache
 frontend/dist/
-frontend/node_modules/.vite/
+dist/
+.vite/
+*.local
 .eslintcache
 
 # OS & IDE
